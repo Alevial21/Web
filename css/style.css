@@ -1,241 +1,34 @@
-/* Fuentes y colores */
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-
-body {
-  margin: 0;
-  font-family: 'Lora', serif;
-  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat #f5f3e7;
-  color: #333;
-}
-
-/* Navbar */
-.navbar {
-  background-color: #27541d;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: top 0.3s;
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li {
-  margin: 0 15px;
-}
-
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.navbar ul li a:hover {
-  color: #cddc39;
-}
-
-/* Header parallax */
-.parallax-header {
-  background-image: url('../images/portada/1.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero-content h1 {
-  font-size: 4em;
-  margin: 0;
-}
-
-.hero-content p {
-  font-size: 1.5em;
-  margin: 10px 0;
-}
-
-.botones .btn {
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #27541d;
-  color: white;
-  border: none;
-  text-decoration: none;
-  font-size: 1em;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.botones .btn:hover {
-  background-color: #1d3f15;
-  transform: scale(1.05);
-}
-
-/* Carrusel */
-.carrusel {
-  position: relative;
-  width: 100%;
-  max-height: 60vh;
-  overflow: hidden;
-}
-
-.slide {
-  display: none;
-  animation: fade 2s;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@keyframes fade {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
-
-/* Galería masonry */
-.galeria h3 {
-  margin-top: 50px;
-}
-
-.masonry {
-  column-count: 3;
-  column-gap: 15px;
-  padding: 10px;
-}
-
-.masonry img {
-  width: 100%;
-  margin-bottom: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.masonry img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Sobre mí */
-.sobre-mi {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-}
-
-.sobre-mi img {
-  width: 300px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-/* Blog */
-.blog {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.blog article {
-  background: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #27541d;
-}
-
-/* Contacto */
-.contacto {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-}
-
-form input, form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #27541d;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #1d3f15;
-}
-
-/* Footer */
-footer {
-  background-color: #27541d;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .masonry {
-    column-count: 1;
-  }
-  .navbar ul {
-    flex-direction: column;
-  }
-}
-/* Reset básico */
+/* ----------- RESET ----------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ----------- BODY & FONDO PAPEL ----------- */
 body {
   font-family: 'Lora', serif;
   background-color: #fdf6e3;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* Fondo tipo papel */
   color: #2e2e2e;
   line-height: 1.6;
   scroll-behavior: smooth;
-  transition: background 0.3s, color 0.3s;
 }
 
-/* Header */
-.header {
+/* ----------- HEADER ----------- */
+header {
   background-color: #fdf6e3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s;
 }
 
 .nav {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -244,40 +37,41 @@ body {
 
 .logo {
   font-size: 1.5rem;
-  font-weight: bold;
   color: #27541d;
+  font-weight: bold;
   text-decoration: none;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .nav-links a {
-  color: #2e2e2e;
   text-decoration: none;
-  padding: 6px 10px;
+  color: #2e2e2e;
+  padding: 0.5rem 0.8rem;
   transition: 0.3s;
+  border-radius: 4px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   background-color: #c8b89a;
   color: #27541d;
-  border-radius: 4px;
 }
 
-/* Main sections */
+/* ----------- SECCIONES ----------- */
 main {
-  padding: 7rem 2rem 4rem;
+  padding-top: 6rem;
   max-width: 1200px;
   margin: auto;
-  animation: fadeIn 1.5s ease;
+  padding: 6rem 2rem 3rem;
+  animation: fadeInUp 1.2s ease;
 }
 
-/* Galería tipo masonry (ejemplo básico, deberías tener JavaScript o CSS Grid) */
+/* ----------- GALERÍA MASONRY ----------- */
 .gallery {
   column-count: 3;
   column-gap: 1rem;
@@ -287,22 +81,22 @@ main {
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 6px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.03);
 }
 
-/* Botones */
+/* ----------- BOTONES ----------- */
 .btn {
   background-color: #27541d;
   color: #fff;
-  padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -310,17 +104,23 @@ main {
   transform: scale(1.05);
 }
 
-/* Footer */
+/* ----------- FOOTER ----------- */
 footer {
   text-align: center;
-  padding: 1.5rem;
   background-color: #f0e9d8;
   color: #27541d;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+/* ----------- ANIMACIONES ----------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
- 
