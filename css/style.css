@@ -1,0 +1,211 @@
+/* Fuentes y colores */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat #f5f3e7;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #27541d;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #cddc39;
+}
+
+/* Header parallax */
+.parallax-header {
+  background-image: url('../images/portada/1.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.botones .btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #27541d;
+  color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.botones .btn:hover {
+  background-color: #1d3f15;
+  transform: scale(1.05);
+}
+
+/* Carrusel */
+.carrusel {
+  position: relative;
+  width: 100%;
+  max-height: 60vh;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  animation: fade 2s;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* Galería masonry */
+.galeria h3 {
+  margin-top: 50px;
+}
+
+.masonry {
+  column-count: 3;
+  column-gap: 15px;
+  padding: 10px;
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.masonry img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Sobre mí */
+.sobre-mi {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.sobre-mi img {
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Blog */
+.blog {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.blog article {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #27541d;
+}
+
+/* Contacto */
+.contacto {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #27541d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #1d3f15;
+}
+
+/* Footer */
+footer {
+  background-color: #27541d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 1;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
+}
